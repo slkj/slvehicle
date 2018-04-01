@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 别名配置 -->
+	<typeAliases>
+		<typeAlias alias="syslog" type="cn.slkj.clgl.syslog.entity.Syslog" />
+		<typeAlias alias="xzqh" type="cn.slkj.clgl.xzqh.entity.CareaXZQH" /> 
+		<typeAlias alias="Module" type="cn.slkj.clgl.module.bean.Module" /> 
+		<typeAlias alias="role" type="cn.slkj.clgl.role.entity.Role" />
+		<typeAlias alias="user" type="cn.slkj.clgl.user.entity.User" />
+		<typeAlias alias="Vehicle" type="cn.slkj.clgl.vehicle.bean.Vehicle" /> 
+		<typeAlias alias="Company" type="cn.slkj.clgl.company.bean.Company" /> 
+		<typeAlias alias="person" type="cn.slkj.clgl.person.entity.Person" />
+		<typeAlias alias="driver_record" type="cn.slkj.clgl.person.entity.Driver_record"/>
+		<typeAlias alias="server_unit" type="cn.slkj.clgl.person.entity.Server_unit"/>
+		<typeAlias alias="driver_exzm" type="cn.slkj.clgl.person.entity.Driver_exzm"/>
+		
+		<typeAlias alias="Department" type="cn.slkj.clgl.department.bean.Department"/>
+		<typeAlias alias="Driving" type="cn.slkj.clgl.driving.bean.Driving"/>
+		<typeAlias alias="transport" type="cn.slkj.clgl.transport.bean.Transport"/>
+		<typeAlias alias="secondInsurance" type="cn.slkj.clgl.secondInsurance.entity.SecondInsurance" />
+		<typeAlias alias="mature" type="cn.slkj.clgl.insurance.entity.Mature" />
+		<typeAlias alias="insurance" type="cn.slkj.clgl.insurance.entity.Insurance" />
+		<typeAlias alias="insuranceType" type="cn.slkj.clgl.insurance.entity.InsuranceType" />
+		<typeAlias alias="insuranceCompany" type="cn.slkj.clgl.insurance.entity.InsuranceCompany" />
+		<typeAlias alias="Global" type="cn.slkj.clgl.global.bean.Global"/>
+
+	</typeAliases>
+	<!-- mapper文件位置 -->
+	<mappers>
+		<mapper resource="cn/slkj/clgl/syslog/mapper/syslog.xml"/>
+		<mapper resource="cn/slkj/clgl/xzqh/mapper/ComboboxMapper.xml" />
+		<mapper resource="cn/slkj/clgl/module/mapper/ModuleMapper.xml" />
+		<mapper resource="cn/slkj/clgl/role/mapper/RoleMapper.xml"/>
+		<mapper resource="cn/slkj/clgl/user/mapper/UserMapper.xml"/>
+		<mapper resource="cn/slkj/clgl/company/mapper/CompanyMapper.xml" />
+		<mapper resource="cn/slkj/clgl/vehicle/mapper/VehicleMapper.xml" />
+		<mapper resource="cn/slkj/clgl/person/mapper/PersonMapper.xml"/>
+		<mapper resource="cn/slkj/clgl/person/mapper/DriverMapper.xml"/>
+		<mapper resource="cn/slkj/clgl/person/mapper/UnitMapper.xml" />
+		<mapper resource="cn/slkj/clgl/person/mapper/ExzmMapper.xml" />
+		
+		<mapper resource="cn/slkj/clgl/department/mapper/DepartmentMapper.xml" />
+		<mapper resource="cn/slkj/clgl/driving/mapper/DrivingMapper.xml" />
+		<mapper resource="cn/slkj/clgl/transport/mapper/TransportMapper.xml" />
+		<mapper resource="cn/slkj/clgl/secondInsurance/mapper/SecondInsuranceMapper.xml"/>
+		<mapper resource="cn/slkj/clgl/insurance/mapper/InsuranceMapper.xml"/>
+		<mapper resource="cn/slkj/clgl/global/mapper/GlobalMapper.xml" />
+
+	</mappers>
+</configuration>

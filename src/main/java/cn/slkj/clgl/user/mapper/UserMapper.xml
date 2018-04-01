@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.slkj.clgl.user.dao.UserMapper">
+
+	<sql id="sql_temp">
+		U_ID, USERNAME, PASSWORD, REGTIME,ADDRESS,TELEPHONE,
+		LOCATION,(SELECT QC FROM TB_XZQH WHERE CODE = LOCATION) AS LOCALNAME,
+		CONTACTS,QQ,EMAIL, COMPANYID,(SELECT gsmc from tb_company WHERE id=COMPANYID) as COMPANY,
+		 departcode ,(SELECT d_name from tb_department WHERE d_code=departcode) as depart,TYPE
+	</sql>
+	 <select id="queryUser" resultType="user">
+	     SELECT * FROM SYS_USER WHERE TYPE=3
+	 </select>
+	<select id="queryAll" resultType="user" parameterType="hashmap">
+		SELECT <include refid="sql_temp" /> FROM(SELECT A.*,ROW_NUMBER() OVER (ORDER BY REGTIME DESC) ROWNUM FROM( 
+			SELECT  * FROM SYS_USER  
+			<where>
+				 
+				<if test="cid != null and cid != ''">
+					AND  COMPANYID =#{cid}
+				</if>
+				<if test="type != null and type != ''">
+					AND  TYPE =#{type}
+				</if>
+				<if test="username != null and  username != ''">
+					AND  USERNAME  LIKE '%'+#{username}+'%'
+				</if>
+				<if test="departcode != null and  departcode != ''">
+					AND  departcode  LIKE #{departcode}
+				</if>
+				AND type != '0'
+			</where>
+			) A )B
+		WHERE  ROWNUM &gt; #{startNum} AND ROWNUM &lt;=#{endNum}
+	</select>
+	
+	
+	<select id="queryAllCount" resultType="int" parameterType="hashmap">
+		SELECT  COUNT(0) FROM SYS_USER  
+		<where>
+			 
+			<if test="cid != null and cid != ''">
+				AND  COMPANYID =#{cid}
+			</if>
+			<if test="type != null and type != ''">
+				AND  TYPE =#{type}
+			</if>
+			<if test="username != null and  username != ''">
+				AND  USERNAME  LIKE '%'+#{username}+'%'
+			</if>
+			<if test="departcode != null and  departcode != ''">
+					AND  departcode  LIKE #{departcode}
+			</if>
+			AND type != '0'
+		</where>
+	</select>
+	
+ 	<insert id="save" parameterType="user">
+		INSERT INTO
+		SYS_USER(U_ID, USERNAME, PASSWORD, REGTIME, ADDRESS, TELEPHONE,LOCATION,CONTACTS,QQ,COMPANYID,departcode,TYPE )
+		VALUES(NEWID(),#{username},#{password},CONVERT(varchar(100), GETDATE(), 20),#{address}
+		,#{telephone},#{location},#{contacts},#{qq},#{companyid},#{departcode},#{type})
+	</insert>
+	
+	<select id="queryOne" parameterType="hashmap" resultType="user">
+		SELECT
+		<include refid="sql_temp" />
+		FROM SYS_USER
+		<where>
+			<if test="u_id != null and u_id != ''">
+				AND U_ID = #{u_id}
+			</if>
+			<if test="username != null and username != ''">
+				AND USERNAME = #{username}
+			</if>
+			<if test="password != null and password != ''">
+				AND PASSWORD = #{password}
+			</if>
+		</where>
+	</select>
+	
+	<delete id="deletes" parameterType="list">
+		DELETE FROM SYS_USER WHERE type != '0'  AND U_ID IN
+		<foreach item="ids" collection="array" open="(" separator=","
+			close=")">
+			#{ids}
+		</foreach>
+	</delete>
+	<delete id="deletesByRole" parameterType="list">
+		DELETE FROM sys_user_role WHERE ID  IN
+		<foreach item="ids" collection="array" open="(" separator=","
+			close=")">
+			#{ids}
+		</foreach>
+	</delete>
+	
+	<update id="updata" parameterType="user">
+		UPDATE SYS_USER set USERNAME = #{username}, PASSWORD = #{password},REGTIME =#{regtime}, ADDRESS=#{address}
+		,TELEPHONE=#{telephone},LOCATION =#{location},  CONTACTS = #{contacts},  EMAIL = #{email},  QQ = #{qq}
+		, COMPANYID = #{companyid},departcode=#{departcode},TYPE=#{type} where U_ID = #{u_id}
+	</update>
+	
+	<select id="queryByRoleId" resultType="user" parameterType="hashmap">
+		SELECT SUR.ID U_ID, USERNAME, PASSWORD, REGTIME,ADDRESS,TELEPHONE,
+		LOCATION,(SELECT QC FROM TB_XZQH WHERE CODE = LOCATION) AS LOCALNAME,CONTACTS,QQ,EMAIL,COMPANYID,
+		TYPE
+		 FROM(SELECT A.*,ROW_NUMBER() OVER (ORDER BY REGTIME DESC) ROWNUM
+		 FROM( SELECT * FROM SYS_USER ) A )B ,SYS_USER_ROLE SUR
+		WHERE B.U_ID = SUR.USERID AND SUR.ROLEID = #{roleid} AND  ROWNUM &gt; #{startNum} AND ROWNUM &lt;=#{endNum}
+	</select>
+	<select id="queryNotInRorle" resultType="user" parameterType="hashmap">
+		SELECT distinct <include refid="sql_temp" /> FROM(SELECT A.*,ROW_NUMBER() OVER (ORDER BY REGTIME DESC) ROWNUM
+		 FROM( 
+		 
+		 	SELECT * FROM sys_user where u_id not in
+			(
+			SELECT u_id FROM sys_user su , sys_user_role sur 
+			WHERE su.u_id = sur.userid
+			and sur.roleid = #{roleid}  
+			)
+		 
+		  ) A )B 
+		WHERE     ROWNUM &gt; #{startNum} AND ROWNUM &lt;=#{endNum}
+	</select>
+	
+	<insert id="addUserRole" parameterType="hashmap" >
+		INSERT INTO SYS_USER_ROLE(ID,ROLEID,USERID)
+		VALUES
+		<foreach collection="ids" item="item" index="index" separator=",">
+			(NewID(),#{roleid}, #{item} )
+		</foreach>
+	</insert>
+	
+</mapper>

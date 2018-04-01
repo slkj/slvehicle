@@ -1,0 +1,535 @@
+.datagrid-header .datagrid-cell {
+	font-weight: bold;
+}
+
+.datagrid-header .datagrid-cell-group {
+	font-weight: bold;
+}
+/* .grid { */
+/* width: 100%; border-collapse: collapse;font: 12px arial, helvetica, sans-serif; border: 1px solid #8DB2E3 */
+/* } */
+/* .grid td { */
+/* font: 100% arial, helvetica, sans-serif; height: 24px; padding: 5px; border: 1px solid #8DB2E3; padding-left: 5px */
+/* } */
+/* .grid th { */
+/* background: #E7F3FE; height: 27px; line-height: 27px; border: 1px solid #8DB2E3; padding-left: 5px; text-align: right; */
+/* } */
+.td_title {
+	height: 24px; line-height: 24px; background: #fff; color: #135294; font-weight: bold; border: 1px solid #fff; padding-left: 20px; text-align: left;
+}
+
+.file-box {
+	position: relative; width: 340px
+}
+
+.txt {
+	height: 22px; border: 1px solid #cdcdcd; width: 180px;
+}
+
+.btn {
+	background-color: #FFF; border: 1px solid #CDCDCD; height: 24px; width: 70px;
+}
+
+.file {
+	position: absolute; top: 0; right: 80px; height: 24px; filter: alpha(opacity : 0); opacity: 0; width: 260px
+}
+
+.bodytable td {
+	line-height: 20px; background: #EEF7FD; font-size: 12px; border: 1px solid #fff; color: #135294;
+}
+
+.treeCss td div {
+	height: 20px !important;
+}
+
+.title {
+	background-image: url(../images/headbg.gif); height: 19px; padding-left: 20px; color: #135294; font-weight: bold; font-size: 12px; padding-top: 6px; padding-bottom: 0px; border-left: solid 0px #8bd2e3; border-right: solid 1px #8bd2e3; margin-top: -1px; border-top: none; border-bottom: 1px solid #bbb;
+}
+
+.bodytable0 {
+	width: 100%; border-collapse: collapse;
+}
+
+.bodytable0 td {
+	line-height: 21px; padding: 2px; border: 1px solid #b6d6e6; color: #135294;
+}
+
+.bodytable1 {
+	width: 100%; border-collapse: collapse; border: 1px solid #ddd;
+}
+
+.bodytable1 td {
+	line-height: 21px; padding-left: 5px; color: #135294; vertical-align: middle;
+}
+
+.bodytable1 td.left {
+	line-height: 21px; padding-left: 5px; color: #135294; vertical-align: middle; border-left: 1px solid #ddd;
+}
+
+.bodytable2 {
+	width: 100%; border-collapse: collapse;
+}
+
+.bodytable2 td {
+	line-height: 21px; padding: 2px; border: 1px dotted #b6d6e6; color: #135294;
+}
+
+.bodytable2 td a {
+	cursor: pointer;
+}
+
+.bodytable2 td a:hover {
+	color: #00f;
+}
+
+.bodytable3 {
+	width: 100%; border-collapse: collapse; margin-top: 2px;
+}
+
+.bodytable3 td {
+	line-height: 20px; padding: 0px 2px 2px 8px; color: #135294; vertical-align: middle;
+}
+
+.bodytable4 {
+	width: 100%; border-collapse: collapse;
+}
+
+.bodytable4 td {
+	line-height: 21px; padding: 2px 2px 2px 2px; border: 1px solid #000; color: #135294;
+}
+
+.bodytable5 {
+	width: 100%; border-collapse: collapse;
+}
+
+.bodytable5 td {
+	line-height: 21px; padding: 2px; border: 1px solid #b6d6e6; color: #135294;
+}
+/*.l-panel table,.l-panel td{ margin:0; padding:0;} */
+.table_title1 {
+	background: #e8f5fe; height: 21px; line-height: 21px; font-weight: bold; text-indent: .3em; outline: 0; border: 1px solid #ddd;
+}
+
+.table_title {
+	background: #e8f5fe; height: 21px; line-height: 21px; font-weight: bold; text-indent: .3em; outline: 0;
+}
+
+.table_label {
+	background: #e8f5fe; text-align: right;
+}
+
+.table_header {
+	background: #e8f5fe; text-align: center; height: 21px; line-height: 21px; font-weight: bold; text-indent: .3em; outline: 0;
+}
+
+.report_item {
+	padding-left: 10px; padding-right: 10px; border-bottom: 1px solid #000;
+}
+
+.report_title {
+	font-size: 24px; font-weight: bold; padding-left: 10px; padding-right: 10px; border-bottom: 1px solid #000; overflow: hidden;
+}
+
+.computer_48 {
+	background: url("../images/icons/silkicons/computer.png");
+}
+
+.user_48 {
+	background: url("../images/icons/silkicons/car.png");
+}
+
+.user_47 {
+	background: url("../images/icons/silkicons/world.png");
+}
+
+.icons {
+	background-image: url("../images/icons/preview.png"); display: block;
+}
+
+.icons_1 {
+	background-image: url("../images/icons/preview.png");background-position: -0px -0px; width: 16px; height: 16px;
+}
+
+.icons_2 {
+	background-image: url("../images/icons/preview.png");background-position: -16px -0px; width: 16px; height: 16px;
+}
+
+.icons_3 {
+	background-image: url("../images/icons/preview.png");background-position: -32px -0px; width: 16px; height: 16px;
+}
+
+.icons_4 {
+	background-image: url("../images/icons/preview.png");background-position: -48px -0px; width: 16px; height: 16px;
+}
+
+.icons_5 {
+	background-image: url("../images/icons/preview.png");background-position: -64px -0px; width: 16px; height: 16px;
+}
+
+.icons_6 {
+	background-image: url("../images/icons/preview.png");background-position: -80px -0px; width: 16px; height: 16px;
+}
+
+.icons_7 {
+	background-image: url("../images/icons/preview.png");background-position: -96px -0px; width: 16px; height: 16px;
+}
+
+.icons_8 {
+	background-image: url("../images/icons/preview.png");background-position: -112px -0px; width: 16px; height: 16px;
+}
+
+.icons_9 {
+	background-image: url("../images/icons/preview.png");background-position: -128px -0px; width: 16px; height: 16px;
+}
+
+.icons_10 {
+	background-image: url("../images/icons/preview.png");background-position: -144px -0px; width: 16px; height: 16px;
+}
+
+.icons_11 {
+	background-image: url("../images/icons/preview.png");background-position: -160px -0px; width: 16px; height: 16px;
+}
+
+.icons_12 {
+	background-image: url("../images/icons/preview.png");background-position: -176px -0px; width: 16px; height: 16px;
+}
+
+.icons_13 {
+	background-image: url("../images/icons/preview.png");background-position: -192px -0px; width: 16px; height: 16px;
+}
+
+.icons_14 {
+	background-image: url("../images/icons/preview.png");background-position: -208px -0px; width: 16px; height: 16px;
+}
+
+.icons_15 {
+	background-image: url("../images/icons/preview.png");background-position: -224px -0px; width: 16px; height: 16px;
+}
+
+.icons_16 {
+	background-image: url("../images/icons/preview.png");background-position: -240px -0px; width: 16px; height: 16px;
+}
+
+.icons_17 {
+	background-image: url("../images/icons/preview.png");background-position: -256px -0px; width: 16px; height: 16px;
+}
+
+.icons_18 {
+	background-image: url("../images/icons/preview.png");background-position: -272px -0px; width: 16px; height: 16px;
+}
+
+.icons_19 {
+	background-image: url("../images/icons/preview.png");background-position: -288px -0px; width: 16px; height: 16px;
+}
+
+.icons_20 {
+	background-image: url("../images/icons/preview.png");background-position: -304px -0px; width: 16px; height: 16px;
+}
+
+.icons_21 {
+	background-image: url("../images/icons/preview.png");background-position: -320px -0px; width: 16px; height: 16px;
+}
+
+.icons_22 {
+	background-image: url("../images/icons/preview.png");background-position: -336px -0px; width: 16px; height: 16px;
+}
+
+.icons_23 {
+	background-image: url("../images/icons/preview.png");background-position: -352px -0px; width: 16px; height: 16px;
+}
+
+.icons_24 {
+	background-image: url("../images/icons/preview.png");background-position: -368px -0px; width: 16px; height: 16px;
+}
+
+.icons_25 {
+	background-image: url("../images/icons/preview.png");background-position: -384px -0px; width: 16px; height: 16px;
+}
+
+.icons_26 {
+	background-image: url("../images/icons/preview.png");background-position: -0px -16px; width: 16px; height: 16px;
+}
+
+.icons_27 {
+	background-image: url("../images/icons/preview.png");background-position: -16px -16px; width: 16px; height: 16px;
+}
+
+.icons_28 {
+	background-image: url("../images/icons/preview.png");background-position: -32px -16px; width: 16px; height: 16px;
+}
+
+.icons_29 {
+	background-image: url("../images/icons/preview.png");background-position: -48px -16px; width: 16px; height: 16px;
+}
+
+.icons_30 {
+	background-image: url("../images/icons/preview.png");background-position: -64px -16px; width: 16px; height: 16px;
+}
+
+.icons_31 {
+	background-image: url("../images/icons/preview.png");background-position: -80px -16px; width: 16px; height: 16px;
+}
+
+.icons_32 {
+	background-image: url("../images/icons/preview.png");background-position: -96px -16px; width: 16px; height: 16px;
+}
+
+.icons_33 {
+	background-image: url("../images/icons/preview.png");background-position: -112px -16px; width: 16px; height: 16px;
+}
+
+.icons_34 {
+	background-image: url("../images/icons/preview.png");background-position: -128px -16px; width: 16px; height: 16px;
+}
+
+.icons_35 {
+	background-image: url("../images/icons/preview.png");background-position: -144px -16px; width: 16px; height: 16px;
+}
+
+.icons_36 {
+	background-image: url("../images/icons/preview.png");background-position: -160px -16px; width: 16px; height: 16px;
+}
+
+.icons_37 {
+	background-image: url("../images/icons/preview.png");background-position: -176px -16px; width: 16px; height: 16px;
+}
+
+.icons_38 {
+	background-image: url("../images/icons/preview.png");background-position: -192px -16px; width: 16px; height: 16px;
+}
+
+.icons_39 {
+	background-image: url("../images/icons/preview.png");background-position: -208px -16px; width: 16px; height: 16px;
+}
+
+.icons_40 {
+	background-image: url("../images/icons/preview.png");background-position: -224px -16px; width: 16px; height: 16px;
+}
+
+.icons_41 {
+	background-image: url("../images/icons/preview.png");background-position: -240px -16px; width: 16px; height: 16px;
+}
+
+.icons_42 {
+	background-image: url("../images/icons/preview.png");background-position: -256px -16px; width: 16px; height: 16px;
+}
+
+.icons_43 {
+	background-image: url("../images/icons/preview.png");background-position: -272px -16px; width: 16px; height: 16px;
+}
+
+.icons_44 {
+	background-image: url("../images/icons/preview.png");background-position: -288px -16px; width: 16px; height: 16px;
+}
+
+.icons_45 {
+	background-image: url("../images/icons/preview.png");background-position: -304px -16px; width: 16px; height: 16px;
+}
+
+.icons_46 {
+	background-image: url("../images/icons/preview.png");background-position: -320px -16px; width: 16px; height: 16px;
+}
+
+.icons_47 {
+	background-image: url("../images/icons/preview.png");background-position: -336px -16px; width: 16px; height: 16px;
+}
+
+.icons_48 {
+	background-image: url("../images/icons/preview.png");background-position: -352px -16px; width: 16px; height: 16px;
+}
+
+.icons_49 {
+	background-image: url("../images/icons/preview.png");background-position: -368px -16px; width: 16px; height: 16px;
+}
+
+.icons_50 {
+	background-image: url("../images/icons/preview.png");background-position: -384px -16px; width: 16px; height: 16px;
+}
+
+.icons_51 {
+	background-image: url("../images/icons/preview.png");background-position: -0px -32px; width: 16px; height: 16px;
+}
+
+.icons_52 {
+	background-image: url("../images/icons/preview.png");background-position: -16px -32px; width: 16px; height: 16px;
+}
+
+.icons_53 {
+	background-image: url("../images/icons/preview.png");background-position: -32px -32px; width: 16px; height: 16px;
+}
+
+.icons_54 {
+	background-image: url("../images/icons/preview.png");background-position: -48px -32px; width: 16px; height: 16px;
+}
+
+.icons_55 {
+	background-image: url("../images/icons/preview.png");background-position: -64px -32px; width: 16px; height: 16px;
+}
+
+.icons_56 {
+	background-image: url("../images/icons/preview.png");background-position: -80px -32px; width: 16px; height: 16px;
+}
+
+.icons_57 {
+	background-image: url("../images/icons/preview.png");background-position: -96px -32px; width: 16px; height: 16px;
+}
+
+.icons_58 {
+	background-image: url("../images/icons/preview.png");background-position: -112px -32px; width: 16px; height: 16px;
+}
+
+.icons_59 {
+	background-image: url("../images/icons/preview.png");background-position: -128px -32px; width: 16px; height: 16px;
+}
+
+.icons_60 {
+	background-image: url("../images/icons/preview.png");background-position: -144px -32px; width: 16px; height: 16px;
+}
+
+.icons_61 {
+	background-image: url("../images/icons/preview.png");background-position: -160px -32px; width: 16px; height: 16px;
+}
+
+.icons_62 {
+	background-image: url("../images/icons/preview.png");background-position: -176px -32px; width: 16px; height: 16px;
+}
+
+.icons_63 {
+	background-image: url("../images/icons/preview.png");background-position: -192px -32px; width: 16px; height: 16px;
+}
+
+.icons_64 {
+	background-image: url("../images/icons/preview.png");background-position: -208px -32px; width: 16px; height: 16px;
+}
+
+.icons_65 {
+	background-image: url("../images/icons/preview.png");background-position: -224px -32px; width: 16px; height: 16px;
+}
+
+.icons_66 {
+	background-image: url("../images/icons/preview.png");background-position: -240px -32px; width: 16px; height: 16px;
+}
+
+.icons_67 {
+	background-image: url("../images/icons/preview.png");background-position: -256px -32px; width: 16px; height: 16px;
+}
+
+.icons_68 {
+	background-image: url("../images/icons/preview.png");background-position: -272px -32px; width: 16px; height: 16px;
+}
+
+.icons_69 {
+	background-image: url("../images/icons/preview.png");background-position: -288px -32px; width: 16px; height: 16px;
+}
+
+.icons_70 {
+	background-image: url("../images/icons/preview.png");background-position: -304px -32px; width: 16px; height: 16px;
+}
+
+.icons_71 {
+	background-image: url("../images/icons/preview.png");background-position: -320px -32px; width: 16px; height: 16px;
+}
+
+.icons_72 {
+	background-image: url("../images/icons/preview.png");background-position: -336px -32px; width: 16px; height: 16px;
+}
+
+.icons_73 {
+	background-image: url("../images/icons/preview.png");background-position: -352px -32px; width: 16px; height: 16px;
+}
+
+.icons_74 {
+	background-image: url("../images/icons/preview.png");background-position: -368px -32px; width: 16px; height: 16px;
+}
+
+.icons_75 {
+	background-image: url("../images/icons/preview.png");background-position: -384px -32px; width: 16px; height: 16px;
+}
+
+.icons_76 {
+	background-image: url("../images/icons/preview.png");background-position: -0px -48px; width: 16px; height: 16px;
+}
+
+.icons_77 {
+	background-image: url("../images/icons/preview.png");background-position: -16px -48px; width: 16px; height: 16px;
+}
+
+.icons_78 {
+	background-image: url("../images/icons/preview.png");background-position: -32px -48px; width: 16px; height: 16px;
+}
+
+.icons_79 {
+	background-image: url("../images/icons/preview.png");background-position: -48px -48px; width: 16px; height: 16px;
+}
+
+.icons_80 {
+	background-image: url("../images/icons/preview.png");background-position: -64px -48px; width: 16px; height: 16px;
+}
+
+.icons_81 {
+	background-image: url("../images/icons/preview.png");background-position: -80px -48px; width: 16px; height: 16px;
+}
+
+.icons_82 {
+	background-image: url("../images/icons/preview.png");background-position: -96px -48px; width: 16px; height: 16px;
+}
+
+.icons_83 {
+	background-image: url("../images/icons/preview.png");background-position: -112px -48px; width: 16px; height: 16px;
+}
+
+.icons_84 {
+	background-image: url("../images/icons/preview.png");background-position: -128px -48px; width: 16px; height: 16px;
+}
+
+.icons_85 {
+	background-image: url("../images/icons/preview.png");background-position: -144px -48px; width: 16px; height: 16px;
+}
+
+.icons_86 {
+	background-image: url("../images/icons/preview.png");background-position: -160px -48px; width: 16px; height: 16px;
+}
+
+.icons_87 {
+	background-image: url("../images/icons/preview.png");background-position: -176px -48px; width: 16px; height: 16px;
+}
+
+.icons_88 {
+	background-image: url("../images/icons/preview.png");background-position: -192px -48px; width: 16px; height: 16px;
+}
+
+.icons_89 {
+	background-image: url("../images/icons/preview.png");background-position: -208px -48px; width: 16px; height: 16px;
+}
+
+.icons_90 {
+	background-image: url("../images/icons/preview.png");background-position: -224px -48px; width: 16px; height: 16px;
+}
+
+.icons_91 {
+	background-image: url("../images/icons/preview.png");background-position: -240px -48px; width: 16px; height: 16px;
+}
+
+.icons_92 {
+	background-image: url("../images/icons/preview.png");background-position: -256px -48px; width: 16px; height: 16px;
+}
+
+.icons_93 {
+	background-image: url("../images/icons/preview.png");background-position: -272px -48px; width: 16px; height: 16px;
+}
+
+.icons_94 {
+	background-image: url("../images/icons/preview.png");background-position: -288px -48px; width: 16px; height: 16px;
+}
+
+.icons_95 {
+	background-image: url("../images/icons/preview.png");background-position: -304px -48px; width: 16px; height: 16px;
+}
+
+.icons_96 {
+	background-image: url("../images/icons/preview.png");background-position: -320px -48px; width: 16px; height: 16px;
+}
+
+.icons_97 {
+	background-image: url("../images/icons/preview.png"); background-position : -336px -48px ; width: 16px; height: 16px;
+}

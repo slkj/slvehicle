@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.slkj.clgl.module.mapper.ModuleMapper">
+	<sql id="sql_temp">
+		ID,NAME,TYPE,PRIORITY,URL,PARENT_ID,ICON,DESCRIPTION
+	</sql>
+	<select id="getAll" resultType="Module" parameterType="hashmap">
+		SELECT * FROM TB_MODULE   ORDER BY PRIORITY
+	</select>
+	
+	<select id="getModuleByRoleId" parameterType="hashmap" resultType="Module">
+		SELECT DISTINCT TBR.* FROM TB_MODULE TBR ,SYS_ROLE_RES TBRR
+		WHERE TBR.ID = TBRR.RESID
+		<if test="roleid != null and roleid != ''">
+			AND TBRR.ROLEID = #{roleid}
+		</if> 
+    	AND type != '菜单'  ORDER BY PARENT_ID
+	</select>
+	
+	<select id="getModuleByUserid" parameterType="hashmap" resultType="Module">
+		select * from dbo.tb_module  where id in (
+			select DISTINCT resid from dbo.sys_role_res srs,tb_module tm	where tm.id =srs.resid AND roleid in (
+				select roleid from dbo.sys_user_role where 1 = 1 and  url != 'isearch'
+				<if test="userid != null and userid != ''">
+					AND userid = #{userid}
+				</if>
+			 )  
+			<if test="parentId != null and parentId != ''">
+					 and tm.parent_id = #{parentId}
+			</if>
+		 )
+		 <if test="type != null and type != ''">
+			and type = #{type}
+		</if>
+		 <if test="url != null and url != ''">
+			AND url = #{url}
+		</if>
+		ORDER BY PRIORITY
+	</select>
+	
+	
+	<select id="queryOne" resultType="Module" parameterType="string">
+		SELECT * FROM TB_MODULE WHERE ID =#{id}
+	</select>
+	
+	
+	<insert id="insert" parameterType="Module">
+		INSERT INTO TB_MODULE
+		(NAME,TYPE,PRIORITY,URL,PARENT_ID,ICON,DESCRIPTION)
+		VALUES(#{name},#{type},#{priority},#{url},#{parent_id},#{icon},#{description})
+	</insert>
+	<update id="update" parameterType="Module">
+		UPDATE TB_MODULE SET
+		NAME=#{name},TYPE=#{type},PRIORITY=#{priority},URL=#{url},PARENT_ID=#{parent_id},ICON=#{icon},DESCRIPTION=#{description}
+		WHERE ID =#{id}
+	</update>
+	<delete id="delete" parameterType="string">
+		DELETE FROM TB_MODULE WHERE ID = #{id}
+	</delete>
+	
+	<select id="getByPid" resultType="Module" parameterType="string" >
+		SELECT <include refid="sql_temp"></include> FROM TB_MODULE  WHERE PARENT_ID = #{parentId}  ORDER BY PRIORITY
+	</select>
+</mapper>

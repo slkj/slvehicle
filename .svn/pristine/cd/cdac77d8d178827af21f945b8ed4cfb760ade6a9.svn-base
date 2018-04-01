@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.slkj.clgl.role.dao.RoleMapper">
+
+	<sql id="sql_temp">
+		ROLEID,ROLENAME,ROLEDSCRIPT,ROLESORT,CREATEDATE 
+	</sql>
+	<select id="queryList" resultType="role" parameterType="hashmap">
+		SELECT <include refid="sql_temp"/>  FROM(SELECT A.*,ROW_NUMBER() OVER (ORDER BY ROLESORT ) ROWNUM
+		FROM(
+		SELECT <include refid="sql_temp"/>  FROM SYS_ROLE
+		<where>
+			<if test="roleName != null and roleName != ''">
+				AND ROLENAME LIKE '%'+#{roleName}+'%'
+			</if>
+		</where>
+		) A )B
+		<!-- WHERE ROWNUM BETWEEN #{startNum} AND #{endNum} -->
+		WHERE ROWNUM &gt; #{startNum} AND ROWNUM &lt;=#{endNum}
+	</select>
+	
+	
+	<select id="queryListCount" resultType="int" parameterType="hashmap">
+		SELECT COUNT(0) FROM SYS_ROLE
+		<where>
+			<if test="roleName != null and roleName != ''">
+				AND ROLENAME LIKE '%'+#{roleName}+'%'
+			</if>
+		</where>
+	</select>
+	<select id="queryByMid" parameterType="role" resultType="role">
+		SELECT TBR.* FROM SYS_ROLE TBR, SYS_USER_ROLE TBUR
+		WHERE TBR.ROLEID = TBUR.ROLEID AND TBUR.USERID = #{roleid}
+	</select>
+	
+	<insert id="saveRoleRes" parameterType="hashmap" >
+		INSERT INTO SYS_ROLE_RES(ID,ROLEID,RESID)
+		VALUES
+		<foreach collection="ids" item="item" index="index" separator=",">
+			(NewID(),#{mid}, #{item} )
+		</foreach>
+	</insert>
+	<delete id="deleteRoleRes" parameterType="hashmap">
+		DELETE FROM SYS_ROLE_RES WHERE  ROLEID = #{mid}
+	</delete>
+	<delete id="deleteRole" parameterType="list">
+		DELETE FROM SYS_ROLE WHERE  ROLEID IN 
+		<foreach item="ids" collection="array" open="(" separator=","
+			close=")">
+			#{ids}
+		</foreach>
+		AND ROLEID != '1'
+	</delete>
+	
+	<insert id="saveRole" parameterType="role" >
+		INSERT INTO SYS_ROLE(ROLEID,ROLENAME,ROLEDSCRIPT,ROLESORT,CREATEDATE  )
+		VALUES
+			(NEWID(),#{rolename}, #{roledscript},#{rolesort},CONVERT(varchar(100), GETDATE(), 20) )
+	</insert>
+	
+	<select id="queryByid" parameterType="role" resultType="role">
+		SELECT <include refid="sql_temp"/> FROM  SYS_ROLE
+		<where>
+			<if test="roleid != null and roleid != ''">
+				AND ROLEID = #{roleid}
+			</if>
+		</where>
+	</select>
+	<update id="editRole" parameterType="role">
+		UPDATE  SYS_ROLE SET ROLENAME = #{rolename} ,ROLEDSCRIPT =#{roledscript},ROLESORT=#{rolesort}
+		WHERE ROLEID = #{roleid}
+	</update>
+	
+	<select id="queryRoleListByUserId" resultType="role" parameterType="hashmap">
+		SELECT DISTINCT TBR.* FROM sys_role TBR ,sys_user_role TBRR
+		WHERE TBR.RoleID = TBRR.roleid
+		<if test="userid != null and userid != ''">
+			AND TBRR.userid = #{userid}
+		</if>
+	</select>
+	
+	<insert id="saveMemRole" parameterType="hashmap" >
+		INSERT INTO SYS_USER_ROLE(ID,userid,ROLEID)
+		VALUES
+		<foreach collection="ids" item="item" index="index" separator=",">
+			(NewID(),#{userid}, #{item} )
+		</foreach>
+	</insert>
+	
+	<delete id="deleteMemRole" parameterType="hashmap">
+		DELETE FROM SYS_USER_ROLE WHERE  userid = #{userid}  
+	</delete>
+	
+</mapper>

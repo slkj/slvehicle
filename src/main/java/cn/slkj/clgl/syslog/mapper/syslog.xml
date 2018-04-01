@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.slkj.clgl.syslog.dao.SyslogMapper">
+	<sql id="sql_temp">
+		ID, TYPE, TITLE, OPERATE,TIME,IP, (SELECT USERNAME FROM SYS_USER WHERE U_ID= OPERATE   )OPERATENAME
+	</sql>
+	<select id="queryAll" resultType="syslog" parameterType="hashmap">
+		SELECT <include refid="sql_temp" />
+		FROM(SELECT A.*,ROW_NUMBER() OVER (ORDER BY TIME DESC) ROWNUM FROM( SELECT * FROM SYS_LOG WHERE 1 = 1
+			<if test="id != null and id != ''">
+				AND  OPERATE = #{ id }  
+			</if> 
+			<if test="operate != null and operate != ''">
+				AND operate like '%'+ #{ operate }+'%' 
+			</if> 
+			<if test="starttime != '' and starttime != null ">
+				AND TIME  >  #{ starttime }   
+			</if> 
+			<if test="endtime != '' and endtime != null ">
+			  	AND TIME  &lt; = #{ endtime }  
+			</if> 
+			<if test="ip != null and ip != ''">
+				AND   IP  Like '%'+ #{ ip }+'%'  
+			</if> 
+		) A )B
+		WHERE ROWNUM &gt; #{startNum} AND ROWNUM &lt;=#{endNum}
+	</select>
+	<select id="queryAllCount" resultType="int" parameterType="hashmap">
+		 SELECT COUNT(0) FROM SYS_LOG WHERE 1 = 1
+			<if test="id != null and id != ''">
+				AND  OPERATE = #{ id }  
+			</if> 
+			<if test="operate != null and operate != ''">
+				AND operate like '%'+ #{ operate }+'%' 
+			</if> 
+			<if test="starttime != '' and starttime != null ">
+				AND TIME  >  #{ starttime }   
+			</if> 
+			<if test="endtime != '' and endtime != null ">
+			  	AND TIME  &lt; = #{ endtime }  
+			</if> 
+			<if test="ip != null and ip != ''">
+				AND   IP  Like '%'+ #{ ip }+'%'  
+			</if> 
+		 
+	</select>
+	
+	<insert id="save" parameterType="syslog">
+		INSERT INTO SYS_LOG(ID, TYPE, TITLE, OPERATE,TIME,IP) 
+		VALUES(NEWID(),#{type},#{title},#{operate},#{time},#{ip})
+	</insert>
+</mapper>

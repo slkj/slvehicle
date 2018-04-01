@@ -1,0 +1,148 @@
+﻿* {
+	margin: 0; padding: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+* html, * html body {
+	overflow: hidden; /*隐藏IE的默认滚动条的宽度*/
+}
+input{
+	vertical-align: middle;
+}
+img {
+	border: none
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+/*-------表格样式--------------*/
+.grid {
+	font: 12px arial, helvetica, sans-serif; border: 1px solid #8DB2E3
+}
+
+.grid td {
+	font: 100% arial, helvetica, sans-serif; height: 24px; padding: 5px; border: 1px solid #8DB2E3; padding-left: 5px
+}
+
+.grid {
+	width: 100%; border-collapse: collapse
+}
+
+.grid th {
+	background: #E7F3FE; height: 27px; line-height: 27px; border: 1px solid #8DB2E3; padding-left: 5px; text-align: right;
+}
+
+/*--------index页面样式-------------*/
+.footer {
+	text-align: center; color: #15428B; margin: 0; padding: 0; line-height: 23px; font-weight: bold
+}
+
+.header {
+	position: relative; height: 68px; background: url(../images/master_header.png) no-repeat;
+}
+
+.header_cont {
+	width: 100%; float: right;
+}
+
+.hea_nav {
+	margin-left: 350px;
+}
+
+.hea_nav ul li {
+	float: left; margin: 30px 5px 0 5px;
+}
+
+.hea_nav ul li a {
+	color: #333; font-weight: 700; display: block; width: 90px; line-height: 38px; text-align: center; font-size: 14px; background: url(../images/nav_bg.png) no-repeat;
+}
+
+.hea_nav ul li a:hover {
+	background: url(../images/nav_bg_hover.png) no-repeat; color: #0f548e;
+}
+
+.hea_nav ul li a.nav_02 {
+	
+}
+
+.hea_nav ul li a.nav_01 {
+	background: url(../images/nav_bg_hover.png) no-repeat; color: #0f548e;
+}
+
+.system {
+	float: right; margin: 10px 20px 0 0;
+}
+
+.system a {
+	margin: 0 5px 0 5px;
+}
+
+.accordion ul {
+	list-style-type: none; margin: 0;
+	/* 	padding: 10px */
+}
+
+.accordion ul li {
+	padding: 0
+}
+
+.accordion ul li a {
+	line-height: 24px; cursor: pointer; text-decoration: none;
+}
+
+.accordion ul li a span.nav {
+	font-family: "Arial Negreta", "Arial"; font-weight: 700; font-style: normal; font-size: 12px; color: #333; text-align: left; line-height: normal;
+}
+
+.accordion ul li div {
+	margin: 2px 0; padding-left: 10px; padding-top: 2px; border: 1px solid transparent
+}
+
+.menuItem li div:hover {
+	border: 1px dashed #D69C00; background: #FFE88C; cursor: pointer
+}
+
+.accordion ul li div.hover a {
+	color: #D16C00; text-decoration: none
+}
+
+.accordion ul li div.selected {
+	border: 1px solid #D69C00; background: #FFE88C; cursor: default
+}
+
+.accordion ul li div.selected a {
+	color: #D16C00; font-weight: bold
+}
+
+.bigicon .img {
+	display: block
+}
+
+.bigicon li {
+	text-align: center
+}
+
+ul.bigicon li div {
+	padding-left: 0
+}
+
+.tabs-tool {
+	border-top-width: 0; border-right-width: 0;
+}
+
+.tabs-tool table {
+	border-width: 0;
+	/* border-collapse: collapse; */ border-spacing: 0;
+}
+
+.userheadimg {
+	border-radius: 4px; box-shadow: 1px 1px 3px #111; width: 120px; height: 120px; margin-left: 5px; background: #d2d2f2; border: 3px solid #fff;
+}
